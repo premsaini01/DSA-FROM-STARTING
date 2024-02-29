@@ -1,3 +1,4 @@
+package LOOPS_FOR;
 import java.util.Scanner;
 
 public class EvenOddSumDiff {
