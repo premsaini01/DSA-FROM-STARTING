@@ -1,4 +1,5 @@
-package LOOPS_FOR;
+package ZERO;
+
 
 import java.util.Scanner;
 

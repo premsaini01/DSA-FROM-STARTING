@@ -1,31 +1,36 @@
-package LOOPS_FOR;
+package ZERO;
 import java.util.Scanner;
 
-public class EvenOddSumDiff {
+public class different {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("enter the num of inputs: ");
         int n = sc.nextInt();
 
-        int esum = 0;
-        int osum = 0;
+        int ecount = 0;
+        int ocount = 0;
+        int pos = 0;
+        int neg = 0;
 
         for(int i=1;i<=n;i++){
             System.out.print("enter a num: ");
             int a = sc.nextInt();
 
             if(a%2==0){
-                esum+=a;
+                ecount++;
             }else{
-                osum+=a;
+                ocount++;
+            }
+
+            if(a>0){
+                pos++;
+            }else{
+                neg++;
             }
         }
 
-        System.out.println("your result is.......");
+        System.out.println();
 
-        System.out.println("even sum= " + esum);
-
-        System.out.println("odd sum= " + osum);
     }
 }
