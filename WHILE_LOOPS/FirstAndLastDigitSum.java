@@ -1,4 +1,4 @@
-package LOOPS;
+package WHILE_LOOPS;
 
 import java.util.*;
 

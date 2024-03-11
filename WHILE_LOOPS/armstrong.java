@@ -1,35 +1,37 @@
-package ASSIGNMENT.WHILE_LOOP;
+package WHILE_LOOPS;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class eight {
+public class armstrong {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("enter a num: ");
-        int n = sc.nextInt();
-        int t = n;
-        int m = n;
-        int c = 0;
 
+        int n = sc.nextInt();
+        int og = n;
+        int ogg = n;
+        int c = 0;
         int ans = 0;
 
-        while(m>0){
+        while(n>0){
             c++;
-            m/=10;
+            n/=10;
         }
 
-        while(t>0){
-            int d = t%10;
-            int p = (int) Math.pow(d, c);
-            ans+=p;
-            t/=10;
+        while(og>0){
+            int d = og%10;
+            ans+= Math.pow(d, c);
+            og/=10;
         }
 
-        if(n==ans){
+
+        if(ogg==n){
             System.out.println("yes");
         }else{
             System.out.println("no");
         }
+
+
     }
 }
