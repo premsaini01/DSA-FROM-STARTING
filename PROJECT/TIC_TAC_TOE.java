@@ -48,8 +48,10 @@ public class TIC_TAC_TOE {
         }
         
         // match result
+        System.out.print("\033[H\033[2J");  
+        System.out.flush(); 
+        print();
         if(flag==0){
-            print();
             System.out.println("MATCH DRAW");
         }else{
             if(i%2==1){
