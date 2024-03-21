@@ -12,8 +12,8 @@ public class TIC_TAC_TOE {
         Scanner sc = new Scanner(System.in);
 
         char c;
-        int flag = 0;
-        for(int i=1;i<=9;i++){
+        int flag = 0,i;
+        for(i=1;i<=9;i++){
             // clear screen
             System.out.print("\033[H\033[2J");  
             System.out.flush(); 
@@ -21,13 +21,6 @@ public class TIC_TAC_TOE {
             // print function calling
             print();
 
-            // win check function calling
-            flag = win_check();
-
-            // braking loop
-            if(flag ==1){
-                break;
-            }
 
             // checking user turn
             if(i%2==1){
@@ -45,7 +38,27 @@ public class TIC_TAC_TOE {
             // update function calling
             update(x, c);
 
+            // win check function calling
+            flag = win_check();
+
+            if(flag==1){
+                break;
+            }
+
         }
+        
+        // match result
+        if(flag==0){
+            print();
+            System.out.println("MATCH DRAW");
+        }else{
+            if(i%2==1){
+                System.out.println("PLAYER 1 WON");
+            }else{
+                System.out.println("PLAYER 2 WON");
+            }
+        }
+
     }
 
     // print function
@@ -119,33 +132,16 @@ public class TIC_TAC_TOE {
 
     // winner check function
     public static int win_check(){
-        if((a1==a2 && a1==a3) || (a4==a5 && a4==a6) || (a7==a8 && a7==a9)){
-            if(a1=='X' || a4=='X' || a7=='X'){
-                System.out.println("PLAYER 1 WIN");
-                return 1;
-            }else{
-                System.out.println("PLAYER  WIN");
-                return 1;
-            }
-        }else if((a1==a4 && a1==a7) || (a2==a5 && a2==a8) || (a3==a6 && a3==a9) ){
-            if(a1=='X' || a2=='X' || a3=='X'){
-                System.out.println("PLAYER 1 WIN");
-                return 1;
-            }else{
-                System.out.println("PLAYER  WIN");
-                return 1;
-            }
-        }else if((a1==a5 && a1==a9) || (a3==a5 && a3==a7)){
-            if(a1=='X' || a2=='X' || a3=='X'){
-                System.out.println("PLAYER 1 WIN");
-                return 1;
-            }else{
-                System.out.println("PLAYER  WIN");
-                return 1;
-            }
-        }
 
-        return 0;
+        if((a1==a2 && a1==a3) || (a4==a5 && a4==a6) || (a7==a8 && a7==a9)){
+            return 1;
+        }else if((a1==a4 && a1==a7) || (a2==a5 && a2==a8) || (a3==a6 && a3==a9) ){
+            return 1;
+        }else if((a1==a5 && a1==a9) || (a3==a5 && a3==a7)){
+            return 1;
+        }else{
+            return 0;
+        }
     }
     
 }
