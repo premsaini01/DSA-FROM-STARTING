@@ -1,4 +1,4 @@
-package PROJECT;
+package GAME;
 import java.util.*;
 
 public class TIC_TAC_TOE {
