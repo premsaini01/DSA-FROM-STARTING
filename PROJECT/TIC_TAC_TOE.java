@@ -35,6 +35,12 @@ public class TIC_TAC_TOE {
             System.out.print("ENTER YOUR CHOICE: ");
             int x = sc.nextInt();
 
+            // valid function calling
+            if(!check_valid(x)){
+                i--;
+                continue;
+            }
+
             // update function calling
             update(x, c);
 
@@ -100,7 +106,6 @@ public class TIC_TAC_TOE {
     // update function
     public static void update(int x,char c){
 
-        // update function to update values
         switch (x) {
             case 1:
                 a1 = c;
@@ -146,4 +151,47 @@ public class TIC_TAC_TOE {
         }
     }
     
+    // validation check function
+    public static boolean check_valid(int x){
+        char z=0;
+
+        switch (x) {
+            case 1:
+                z=a1;
+                break;
+            case 2:
+                z=a2;
+                break;
+            case 3:
+                z=a3;
+                break;
+            case 4:
+                z=a4;
+                break;
+            case 5:
+                z=a5;
+                break;
+            case 6:
+                z=a6;
+                break;
+            case 7:
+                z=a7;
+                break;
+            case 8:
+                z=a8;
+                break;
+            case 9:
+                z=a9;
+                break;
+        }
+
+        if(x<1 || x>9){
+            return false;
+        }else if(z=='X' || z=='O'){
+            return false;
+        }else{
+            return true;
+        }
+        
+    }
 }
