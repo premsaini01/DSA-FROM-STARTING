@@ -6,6 +6,7 @@ public class TIC_TAC_TOE {
     // global variable
     static int n = 13;
     static char a1 = '1',a2 = '2',a3 = '3',a4 = '4',a5 = '5',a6 = '6',a7 = '7',a8 = '8',a9 = '9';
+    static char[] arr = new char[10];
 
     // main function
     public static void main(String[] args) {
